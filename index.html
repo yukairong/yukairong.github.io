@@ -189,7 +189,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-29 15:40:50 / 修改时间：16:28:06" itemprop="dateCreated datePublished" datetime="2020-02-29T15:40:50+08:00">2020-02-29</time>
+              <time title="创建时间：2020-02-29 15:40:50 / 修改时间：17:12:13" itemprop="dateCreated datePublished" datetime="2020-02-29T15:40:50+08:00">2020-02-29</time>
             </span>
 
           <br>
@@ -198,7 +198,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>851</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -232,6 +232,10 @@
 <p>0    0.841791<br>1    0.125207<br>2    0.892392<br>3    0.196360<br>4    0.677930<br>dtype: float64<br>&lt;class ‘pandas.core.series.Series’&gt;<br>RangeIndex(start=0, stop=5, step=1) &lt;class ‘pandas.core.indexes.range.RangeIndex’&gt;<br>[0.84179111 0.12520669 0.89239199 0.19636049 0.67793029] &lt;class ‘numpy.ndarray’&gt;</p>
 </li>
 </ul>
+ <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Series 创建方法一： 由字典创建，字典的key就是index， values就是values</span></span><br><span class="line"></span><br><span class="line">dic = &#123;<span class="string">'a'</span>:1, <span class="string">'b'</span>:2, <span class="string">'c'</span>:3, <span class="string">'4'</span>:4, <span class="string">'5'</span>:5&#125;</span><br><span class="line">s = pd.Series(dic)</span><br><span class="line"><span class="builtin-name">print</span>(s)</span><br><span class="line"><span class="comment"># 需要注意： key肯定是字符串</span></span><br></pre></td></tr></table></figure>
+<p>  a    1<br>  b    2<br>  c    3<br>  4    4<br>  5    5<br>  dtype: int64</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Series 创建方法二：由数组创建（一维数组）</span></span><br><span class="line"></span><br><span class="line">arr = np.random.randn(5) # 标准正态分布的随机数</span><br><span class="line">s = pd.Series(arr)</span><br><span class="line"><span class="builtin-name">print</span>(arr)</span><br><span class="line"><span class="builtin-name">print</span>(s)</span><br><span class="line"><span class="comment"># 默认index是从0开始，步长为1的数字</span></span><br><span class="line"></span><br><span class="line">s = pd.Series(arr, index=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>], <span class="attribute">dtype</span>=np.object)</span><br><span class="line"><span class="builtin-name">print</span>(s)</span><br><span class="line"><span class="comment"># index参数： 设置index,长度保持一致（列序号）</span></span><br><span class="line"><span class="comment"># dtype参数：</span></span><br></pre></td></tr></table></figure>
+
 <p>More info: <a href="https://user.qzone.qq.com/2323464705/infocenter" target="_blank" rel="noopener">空间</a></p>
 
       
