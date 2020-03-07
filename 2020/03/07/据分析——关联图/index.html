@@ -27,19 +27,19 @@
 <meta property="og:site_name" content="空城の博客">
 <meta property="og:description" content="关联图是查找两个事物之间关系的图像，它能够为我们展示出一个事物随着另一个事物的变化的趋势，是数据分析中重要的一部分。 在本节中你能够学会如何去分析数据并且可视化">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-26.png">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-27.png">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-28.png">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-29.png">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-30.png">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-31.png">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-32.png">
-<meta property="og:image" content="http://yukairong.github.io/images%5Cpasted-33.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-26.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-27.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-28.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-29.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-30.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-31.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-32.png">
+<meta property="og:image" content="http://yukairong.github.io/images/pasted-33.png">
 <meta property="article:published_time" content="2020-03-07T12:52:36.000Z">
-<meta property="article:modified_time" content="2020-03-07T12:53:32.973Z">
+<meta property="article:modified_time" content="2020-03-07T13:04:51.951Z">
 <meta property="article:author" content="yukairong">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yukairong.github.io/images%5Cpasted-26.png">
+<meta name="twitter:image" content="http://yukairong.github.io/images/pasted-26.png">
 
 <link rel="canonical" href="http://yukairong.github.io/2020/03/07/%E6%8D%AE%E5%88%86%E6%9E%90%E2%80%94%E2%80%94%E5%85%B3%E8%81%94%E5%9B%BE/">
 
@@ -200,7 +200,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-07 20:52:36 / 修改时间：20:53:32" itemprop="dateCreated datePublished" datetime="2020-03-07T20:52:36+08:00">2020-03-07</time>
+              <time title="创建时间：2020-03-07 20:52:36 / 修改时间：21:04:51" itemprop="dateCreated datePublished" datetime="2020-03-07T20:52:36+08:00">2020-03-07</time>
             </span>
 
           
@@ -253,27 +253,27 @@
 <h4 id="1-散点图"><a href="#1-散点图" class="headerlink" title="1.散点图"></a>1.散点图</h4><p>注：所有代码在Jupyter已运行</p>
 <p>导入相关的库</p>
 <figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline </span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> mpl</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"></span><br><span class="line"><span class="title">print</span>(np.__version__)</span><br><span class="line"><span class="title">print</span>(pd.__version__)</span><br><span class="line"><span class="title">print</span>(mpl.__version__)</span><br></pre></td></tr></table></figure>
-<p><em>%matplotlib inline 魔法函数，能够直接在Jupyter中展现图片</em><br><img src="/images%5Cpasted-26.png" alt="upload successful"></p>
+<p><em>%matplotlib inline 魔法函数，能够直接在Jupyter中展现图片</em><br><img src="/images/pasted-26.png" alt="upload successful"></p>
 <h4 id="2-绘制散点图的函数-plt-scatter"><a href="#2-绘制散点图的函数-plt-scatter" class="headerlink" title="2.绘制散点图的函数 plt.scatter()"></a>2.绘制散点图的函数 plt.scatter()</h4><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 绘制超简单的散点图： 变量x1和x2 的关系</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据</span></span><br><span class="line"><span class="attr">x1</span> = np.random.randn(<span class="number">30</span>)  <span class="comment"># 满足正态分布的30个随机数</span></span><br><span class="line"><span class="attr">x2</span> = x1 + x1**<span class="number">2</span> - <span class="number">10</span>   <span class="comment"># x2 = x1^2 + x1 -10 correlation</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 确定画布  -  当只有一个图的时候，不是必须的</span></span><br><span class="line">plt.figure(<span class="attr">figsize=(8,4))</span>  <span class="comment"># figsize图像尺度（length，width）</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.scatter(x1,  <span class="comment"># 横坐标</span></span><br><span class="line">          x2,  <span class="comment"># 纵坐标</span></span><br><span class="line">          <span class="attr">s=20,</span>  <span class="comment"># 点的尺寸大小</span></span><br><span class="line">          <span class="attr">c='blue',</span>  <span class="comment"># 颜色</span></span><br><span class="line">          <span class="attr">label="Positive")</span>  <span class="comment"># 可以输入字符串来形容散点图</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 装饰图形</span></span><br><span class="line">plt.legend()  <span class="comment"># 显示图例</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 让图形显示</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images%5Cpasted-27.png" alt="upload successful"></p>
+<p><img src="/images/pasted-27.png" alt="upload successful"></p>
 <p>接下来我们尝试一下稍稍难一点的，增添标签y。</p>
 <p>在机器学习中，Label经常会出现数据中。</p>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">x = np.random.randn(<span class="number">10</span>, <span class="number">2</span>)  # 生成shape为(<span class="number">10</span>,<span class="number">2</span>) 十行两列的数据集</span><br><span class="line"></span><br><span class="line">y = np.<span class="built_in">array</span>([<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>])   # 生成的标签</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">8</span>,<span class="number">4</span>))</span><br><span class="line"></span><br><span class="line">plt.scatter(x[:,<span class="number">0</span>], x[:,<span class="number">1</span>],  # 切片的方式， 第<span class="number">0</span>列所有行， 第<span class="number">1</span>列所有行</span><br><span class="line">            s=<span class="number">50</span>, c=y, </span><br><span class="line">#            label = [<span class="string">"Zero"</span>,<span class="string">"Zero"</span>,<span class="string">"One"</span>,<span class="string">"One"</span>,<span class="string">"Zero"</span>,<span class="string">"One"</span>,<span class="string">"Zero"</span>,<span class="string">"One"</span>,<span class="string">"Zero"</span>,<span class="string">"Zero"</span>] # 只能对应一种颜色</span><br><span class="line">           )</span><br><span class="line"></span><br><span class="line"># plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><em>若在没有label的情况下，plt.legend()将会报错，因为图片中没有图例，plt.legend无法找到图例对象</em><br><img src="/images%5Cpasted-28.png" alt="upload successful"></p>
+<p><em>若在没有label的情况下，plt.legend()将会报错，因为图片中没有图例，plt.legend无法找到图例对象</em><br><img src="/images/pasted-28.png" alt="upload successful"></p>
 <p><strong>对于可视化分类标签的图例</strong><br>如果我们希望显示多种颜色的散点图，并且这个颜色是我们的标签label所代表的分类，那我们无法让散点图显示分别代表不同颜色的图例</p>
 <figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">color</span> = [<span class="string">"red"</span>,<span class="string">"black"</span>]  <span class="comment"># 颜色列表</span></span><br><span class="line"><span class="attr">labels</span> = [<span class="string">"Zero"</span>,<span class="string">"One"</span>] <span class="comment"># 标签的类别列表</span></span><br><span class="line"></span><br><span class="line">for i <span class="keyword">in</span> range(x.shape[<span class="number">1</span>]): <span class="comment"># shape为(10,2),即为x.shape[1]=2</span></span><br><span class="line">    plt.scatter(x[<span class="attr">y==i,</span> <span class="number">0</span>],<span class="comment"># 将x第一列中标签等于指定标签的值取出来</span></span><br><span class="line">               x[<span class="attr">y==i,</span> <span class="number">1</span>],</span><br><span class="line">               <span class="attr">c</span> = color[i],</span><br><span class="line">               <span class="attr">label</span> = labels[i])</span><br><span class="line"><span class="comment"># 在标签中存在几种类别，就需要循环几次，一次画一个颜色的点</span></span><br><span class="line"></span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/images%5Cpasted-29.png" alt="upload successful"></p>
+<p><img src="/images/pasted-29.png" alt="upload successful"></p>
 <h4 id="3-认识绘图所需要的数据"><a href="#3-认识绘图所需要的数据" class="headerlink" title="3.认识绘图所需要的数据"></a>3.认识绘图所需要的数据</h4><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 导入github上的公开数据</span></span><br><span class="line">midwest = pd.read_csv(<span class="string">"https://raw.githubusercontent.com/selva86/datasets/master/midwest_filter.csv"</span>) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 探索数据</span></span><br><span class="line">midwest.head() <span class="comment"># 默认列举出前5行的数据</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images%5Cpasted-30.png" alt="upload successful"><br><img src="/images%5Cpasted-31.png" alt="upload successful"></p>
+<p><img src="/images/pasted-30.png" alt="upload successful"><br><img src="/images/pasted-31.png" alt="upload successful"></p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">midwest.columns  <span class="meta"># 获得数据集的所有列属性</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images%5Cpasted-32.png" alt="upload successful"></p>
+<p><img src="/images/pasted-32.png" alt="upload successful"></p>
 <h4 id="4-准备标签的列表和颜色"><a href="#4-准备标签的列表和颜色" class="headerlink" title="4.准备标签的列表和颜色"></a>4.准备标签的列表和颜色</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 提取标签中的类别</span></span><br><span class="line">categories = np.unique(midwest[<span class="string">'category'</span>])  <span class="comment"># unique去掉所有重复的项</span></span><br><span class="line"><span class="built_in">print</span>(categories)  <span class="comment"># 我们所要使用的标签的列表</span></span><br></pre></td></tr></table></figure>
 
-<p><img src="/images%5Cpasted-33.png" alt="upload successful"></p>
+<p><img src="/images/pasted-33.png" alt="upload successful"></p>
 
     </div>
 
